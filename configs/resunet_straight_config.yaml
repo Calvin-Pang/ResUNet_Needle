@@ -1,0 +1,24 @@
+meta_file: '../datasets/seg_data/trainSet.csv'
+
+epoch: 500
+batch_size: 8
+lr: 1.e-4
+multi_lr_milestones: [100, 200, 300, 400]
+model: seg
+res: true
+dice_lambda: 1
+seg_lambda: 0.5
+straight_lambda: 0.000001
+val_every: 20
+
+
+train_set:
+    img_dir: '../datasets/seg_data/trainImages'
+    mask_dir: '../datasets/seg_data/trainMasks'
+
+val_set:
+    img_dir: '../datasets/seg_data/valImages'
+    mask_dir: '../datasets/seg_data/valMasks'
+
+test_set:
+    img_dir: '../datasets/seg_data/testImages'
