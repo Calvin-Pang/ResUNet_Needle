@@ -14,3 +14,6 @@ Needle segmentation in lung CT scans is a critical task in medical imaging, whic
 
 ### Training
 To reproduce the three baseline compared in the project, please run the following commands.
+
+- 11
+- 22
