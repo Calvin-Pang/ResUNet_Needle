@@ -13,7 +13,15 @@ Needle segmentation in lung CT scans is a critical task in medical imaging, whic
 ![image](https://github.com/Calvin-Pang/ResUNet_Needle/assets/72646258/51fb203e-74b5-485d-b6b7-b5fb14a2feeb)
 
 ### Training
-To reproduce the three baseline compared in the project, please run the following commands.
+To reproduce the three baseline compared in the project, please run the following commands and replace `your_exp_name` with any customized experiment name.
 
-- 11
-- 22
+- Vanilla U-Net with StraightnessLoss: `python main.py --config ./configs/unet_straight_config.yaml --exp_name your_exp_name`
+- ResUNet without StraightnessLoss: `python main.py --config ./configs/resunet_nonstraight_config.yaml --exp_name your_exp_name`
+- ResUNet with StraightnessLoss: `python main.py --config ./configs/resunet_straight_config.yaml --exp_name your_exp_name`
+
+### Inference 
+If you want to do inference on the test images after training, please run the following commands. **Please match the `your_exp_name` here with the experiment name you used for training, so that the code can find the correct folder to get the trained model.**
+
+- Vanilla U-Net with StraightnessLoss: `python inference.py --config ./configs/unet_straight_config.yaml --exp_name your_exp_name`
+- ResUNet without StraightnessLoss: `python inference.py --config ./configs/resunet_nonstraight_config.yaml --exp_name your_exp_name`
+- ResUNet with StraightnessLoss: `python inference.py --config ./configs/resunet_straight_config.yaml --exp_name your_exp_name`
