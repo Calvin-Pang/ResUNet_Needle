@@ -8,18 +8,18 @@ Needle segmentation in lung CT scans is a critical task in medical imaging, whic
 ## Qualitative Results
 ![image](https://github.com/Calvin-Pang/ResUNet_Needle/assets/72646258/f04b2b42-4d5b-4c86-929a-865a380ee3dd)
 
-
 ## Quantitative Results
 ![image](https://github.com/Calvin-Pang/ResUNet_Needle/assets/72646258/51fb203e-74b5-485d-b6b7-b5fb14a2feeb)
 
-## Training
-To reproduce the three baseline compared in the project, please run the following commands and replace `your_exp_name` with any customized experiment name.
+## Training and Inference
+**Before start any trainig or inference, please remember to modify the path to the `meta_file`, `train_set`, `val_set` and `test_set` in the config!**
+
+To reproduce the training process of three baseline compared in the project, please run the following commands and replace `your_exp_name` with any customized experiment name.
 
 - Vanilla U-Net with StraightnessLoss: `python main.py --config ./configs/unet_straight_config.yaml --exp_name your_exp_name`
 - ResUNet without StraightnessLoss: `python main.py --config ./configs/resunet_nonstraight_config.yaml --exp_name your_exp_name`
 - ResUNet with StraightnessLoss: `python main.py --config ./configs/resunet_straight_config.yaml --exp_name your_exp_name`
 
-## Inference 
 If you want to do inference on the test images after training, please run the following commands. **Please match the `your_exp_name` here with the experiment name you used for training, so that the code can find the correct folder to get the trained model.**
 
 - Vanilla U-Net with StraightnessLoss: `python inference.py --config ./configs/unet_straight_config.yaml --exp_name your_exp_name`
